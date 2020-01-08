@@ -37,6 +37,20 @@ section {
   margin-top: 2em;
 }
 
+#beef {
+  background-color: red; 
+  color: white;
+}
+
+
+#beef {
+  background-color: pink; 
+}
+
+#sushi {
+  background-color: yellow; 
+}
+
 /* Simple Responsive Framework. */
 .row {
   width: 100%;
