@@ -1,0 +1,26 @@
+<div class="container" ng-controller="InfoController as info">
+  <h2 id="menu-categories-title" class="text-center">User Info</h2>
+
+  <div class="text-center" ng-if="!info.user.dishdata">
+	<a ui-sref="public.user.signup">Not Signed Up Yet. Sign up Now! </a>
+  </div>
+
+  <div ng-if="info.user.dishdata">
+  	<div class="text-center" >
+    	Registered information about you.
+  	</div>
+
+  	<div id="info">
+      First name: {{ info.user.firstname}} <br>
+      Last name: {{ info.user.lastname}} <br>
+      Email: {{ info.user.email}} <br>
+      Phone: {{ info.user.phone }} <br>
+      Favourite dish [{{info.user.dish}}]: {{ info.user.dishdata.name }} <br>
+      Description: {{ info.user.dishdata.description }}
+  	</div>
+  	<div>
+      <img class="img-responsive" width="250" height="150" ng-src="{{info.basePath}}/images/{{info.user.dishdata.short_name}}.jpg" alt="{{info.user.dishdata.name}}">
+  	</div>
+  </div>
+
+</div>

@@ -2,7 +2,7 @@
 "use strict";
 
 angular.module('common', [])
-.constant('ApiPath', 'https://ychaikin-course5.herokuapp.com')
+.constant('ApiPath', 'https://mic-course5.herokuapp.com')
 .config(config);
 
 config.$inject = ['$httpProvider'];
@@ -11,3 +11,8 @@ function config($httpProvider) {
 }
 
 })();
+
+
+
+// https://www.davidchuschinabistro.com/images/L19.jpg
+// https://mic-course5.herokuapp.com/

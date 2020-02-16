@@ -1,0 +1,62 @@
+<div class="container" ng-controller="RegistrationController as reg">
+  <h2 id="menu-categories-title" class="text-center">Sign Up</h2>
+  <div class="text-center">
+    Please provide the following information about you.
+  </div>
+
+  <fieldset>
+      
+      <form name='regForm' novalidate>
+
+        <input type="text" name="firstname" placeholder="First name"
+          ng-model="reg.user.firstname">
+          <!-- {{ reg.user.firstname }} -->
+          <br>
+
+        <input type="text" name="lastname" placeholder="Last name"
+          ng-model="reg.user.lastname">
+          <!-- {{ reg.user.username }} -->
+          <br>  
+
+        <input type="email" name="email" placeholder="Email"
+          ng-model="reg.user.email"
+          required>
+          <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+            Must be a valid email address: handle@domain format
+          </span>
+          <br>
+
+        <input type="text" name="phone" placeholder="Phone ###-###-####"
+          ng-model="reg.user.phone"
+          pattern="(\d{3})-(\d{3})-(\d{4})">
+          <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+            Phone must be in the format ###-###-####.
+          </span>
+          <br>
+
+        <input type="text" name="dish" placeholder="Favourite dish"
+          ng-model="reg.user.dish">
+          <span ng-if="reg.completed && !reg.user.dishdata">
+            No such menu number exists.
+          </span>
+          <br>  
+
+        <button
+          ng-disabled="regForm.$invalid"
+          ng-click="reg.submit()">Submit</button>
+
+          <span ng-if="regForm.email.$invalid">
+            You must provide at least a valid email address
+          </span>
+
+          <!-- <div style="margin-top: 10px;">
+            Form valid? {{ regForm.$valid }}
+          </div> -->
+      </form>
+    </fieldset>
+
+    <div ng-if="reg.completed && reg.user.dishdata">
+      Your Information has been saved 
+    </div>
+
+</div>
