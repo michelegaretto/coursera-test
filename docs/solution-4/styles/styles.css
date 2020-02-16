@@ -1,0 +1,26 @@
+body {
+  font-size: 1.5em;
+
+}
+h1{
+  font-family: Arial;
+}
+
+.header{
+  display: inline-block;
+}
+.error {
+  color: red;
+  font-weight: bold;
+  display: none;
+}
+
+.loading-icon {
+  position: absolute;
+  left: 50%;
+  top: 10px;
+}
+
+tr[ui-sref]:hover {
+  cursor: pointer;
+}
